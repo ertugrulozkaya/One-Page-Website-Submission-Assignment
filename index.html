@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Page Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ertuğrul Özkaya</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <h1>Welcome to My Website</h1>
+            <p>A beautiful and functional one-page website</p>
+            <a href="#gallery" class="btn btn-primary">View Gallery</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm Ertuğrul Özkaya, a passionate web developer focusing on creating beautiful and functional websites.</p>
+                    <p>This one-page website showcases my skills in HTML, CSS, and JavaScript, featuring a responsive design and a custom image gallery with lightbox functionality.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skills">
+                        <h3>My Skills</h3>
+                        <div class="skill-item">
+                            <span>HTML/CSS</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Responsive Design</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Image Gallery</h2>
+            <div class="row gallery-container">
+                <div class="col-md-4 gallery-item">
+                    <img src="img/image1.jpg" alt="Nature" class="img-fluid mb-4" onclick="openLightbox(0)">
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="img/image2.jpg" alt="Architecture" class="img-fluid mb-4" onclick="openLightbox(1)">
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="img/image3.jpg" alt="Technology" class="img-fluid mb-4" onclick="openLightbox(2)">
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="img/image4.jpg" alt="Food" class="img-fluid mb-4" onclick="openLightbox(3)">
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="img/image5.jpg" alt="Travel" class="img-fluid mb-4" onclick="openLightbox(4)">
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="img/image6.jpg" alt="People" class="img-fluid mb-4" onclick="openLightbox(5)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <div class="lightbox-controls">
+                <button class="prev-btn" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <img id="lightbox-img" src="">
+            <div id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Me</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Ertuğrul Özkaya. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ertugrulozkaya"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 
